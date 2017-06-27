@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Design Pattern exampls</title>
+</head>
+<body>
+  <p id="results"></p>
+  <form class="" action="index.html" method="post">
+    <h1>Payment form</h1>
+    <p>Required information are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+    <section>
+      <h2>Contact information</h2>
+      <fieldset>
+        <legend>Title</legend>
+        <ul>
+          <li>
+            <label for="title_1">Mister</label>
+            <input id="title_1" type="radio" name="title" value="M.">
+          </li>
+          <li>
+            <label for="title_2">Miss</label>
+            <input id="title_2" type="radio" name="title" value="Ms.">
+          </li>
+        </ul>
+      </fieldset>
+
+      <p>
+        <label for="name">Name: <strong><abbr title="required">*</abbr></strong></label>
+        <input id="name" type="text" name="user_name">
+      </p>
+      <p>
+        <label for="mail">E-mail: <strong><abbr title="required">*</abbr></strong></label>
+        <input id="mail" type="email" name="user_email">
+      </p>
+      <p>
+        <label for="pwd">Password: <strong><abbr title="required">*</abbr></strong></label>
+        <input id="pwd" type="password" name="user_name">
+      </p>
+    </section>
+    <section>
+      <h2>Payment information</h2>
+      <p>
+        <label for="card">Card type: </label>
+        <select id="card" class="" name="user_card">
+          <option value="visa">Visa</option>
+          <option value="mc">MasterCard</option>
+          <option value="amex">American Express</option>
+        </select>
+      </p>
+    </section>
+    <p> <button type="submit">Validate the payment</button> </p>
+
+  </form>
+  <!-- <script type="text/javascript" src='mediator.js'> </script> -->
+  <!-- <script type="text/javascript" src='observer.js'> </script> -->
+  <script type="text/javascript" src='KeypressGame_observer.js'> </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+}
+body {
+  /*position: relative;*/
+}
+.windowLength1000 {
+  height: 1000px;
+  background-color: #123;
+}
+.windowLength500 {
+  height: 500px;
+  background-color: #567;
+}
+.windowLength200 {
+  height: 200px;
+  background-color: #89A;
+}
+.windowLength100 {
+  height: 100px;
+  background-color: #BCD;
+}
+
+.box {
+  height: 50px;
+  width: 50px;
+  /*margin: 10px;*/
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+#slideAd {
+  position: absolute;
+  bottom: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: -140px;
+
+  /*right: 0px;*/
+  padding: 20px;
+  background-color: #efefef;
+  width: 100px;
+}
