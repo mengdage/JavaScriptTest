@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+    for(var i = 0; i < 1000000000; i++){
+
+    }
+  </script>
+  <script type="text/javascript">
+    window.onload = function(){
+      console.log('window onload');
+    }
+    document.addEventListener('readystatechange', function(e){
+      switch(document.readyState) {
+        case 'loading':
+          console.log('doc loading');
+          break;
+        case 'interactive':
+          console.log('doc interactive');
+          break;
+        case 'complete':
+          console.log('doc completed')
+          break;
+        default:
+          console.log('UNKNOW: ', e);
+      }
+    })
+    document.addEventListener('DOMContentLoaded', function(){
+      console.log('document DOMContentLoaded');
+    });
+  </script>
+</head>
+<body>
+  <h1>Loading JS</h1>
+  <p>normal script</p>
+  <p>Async loading</p>
+  <script deter type="text/javascript" src="./wait0s.js"> </script>
+  <script type="text/javascript" src="./wait5s.js"> </script>
+  <!-- <script async type="text/javascript" src="./jquery-3.2.1-bak2.min.js"> </script> -->
+  <!-- <script async type="text/javascript" src="./jquery-3.2.1.min.js"> </script> -->
+
+</body>
+</html>
