@@ -7,14 +7,21 @@
   <title>Ajax</title>
 </head>
 <body>
-  <script type="text/javascript">
-  function print(c) {
-    console.log(c);
-  }
+  <header>
+    <h1>What are you interested in today?</h1>
+    <div class="site-container">
+      <form id="search-form" action="#">
+        <label for="search-keyword"></label>
+        <input id="search-keyword" type="text" name="keyword" value="">
+        <input type="submit" name="" value="Search">
+      </form>
+    </div>
+  </header>
+  <div class="site-container">
+    <div class="response-container">
 
-  </script>
-  <script type="text/javascript" src="https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json&callback=print">
-
+    </div>
+  </div>
   </script>
   <script src="app.js"> </script>
 </body>
