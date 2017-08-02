@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: minmax(10px, auto);
+    grid-gap: 1em;
+  }
+
+  .container > div {
+    background-color: #eee;
+    padding: 1em;
+  }
+
+  .container > div:nth-child(odd) {
+    background-color: #ccc;
+  }
+
+  .box1 {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+
+  .box2 {
+
+  }
+
+  .box3 {
+
+  }
+
+  .box4 {
+    grid-column: 2/4;
+    grid-row: 2/4;
+
+  }
+
+  .box5 {
+  }
+
+  .box6 {
+    grid-column: 2/3;
+  }
+  </style>
+</head>
+<body>
+  <h1>CSS Grid</h1>
+  <div class="container">
+    <div class="box box1">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis iusto magnam ea amet, quia totam hic beatae soluta, a repellat aliquam distinctio! Esse possimus, molestias ducimus itaque provident illum quisquam.
+    </div>
+    <div class="box box2">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, laborum, voluptatibus. Cupiditate voluptas veritatis fugit aliquam, obcaecati, omnis sequi odio eaque perferendis. Officiis commodi alias facilis porro nostrum esse ducimus tempore, hic quos eius magni sequi, eum vero? Dolores quo quidem odit! Dicta velit molestias, quos ea dolores nobis ullam.
+
+    </div>
+    <div class="box box3">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis quos a temporibus voluptatum, explicabo ratione commodi similique qui libero molestias aliquid culpa nobis, consequuntur beatae numquam, eveniet repellendus, quibusdam ullam!
+    </div>
+    <div class="box box4">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, recusandae.
+    </div>
+    <div class="box box5">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, recusandae.
+
+    </div>
+    <div class="box box6">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, recusandae.
+    </div>
+  </div>
+</body>
+</html>
