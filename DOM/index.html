@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+    function init() {
+      const images = [];
+      images.push(document.getElementById('image1'));
+      images.push(document.getElementById('image2'));
+      images.push(document.getElementById('image3'));
+      const outputElem = document.getElementById('output');
+
+      let outputContent = '<ul>';
+      images.forEach( (image, idx) => {
+        outputContent += `
+          <li>
+            Image ${idx} width: ${image.width} height ${image.height}
+            style.width: ${image.style.width||0} style.height: ${image.style.height||0}
+          </li>
+        `;
+      });
+      outputContent += '</ul>';
+
+      outputElem.innerHTML = outputContent;
+
+    }
+
+    window.addEventListener('load', init);
+
+    function setBorderWidth(w) {
+      document.getElementById('img1').style.borderWidth = w + 'px';
+    }
+
+    function changeText() {
+      const p = document.getElementById('pid');
+      p.style.color='blue';
+      p.style.fontSize='2em';
+    }
+
+    function stopEvent(e) {
+      e.stopPropagation();
+      console.log('hi, first row');
+    }
+
+    function addHanlderToFirstRow() {
+      const firstRow = document.getElementById('tbl1');
+      firstRow.addEventListener('click', stopEvent, false);
+    }
+    window.addEventListener('DOMContentLoaded', addHanlderToFirstRow);
+
+
+    // getComputedStyle
+    function cStyles() {
+      var RefDiv = document.getElementById("d1");
+      var txtHeight = document.getElementById("t1");
+      var h_style = document.defaultView.getComputedStyle(RefDiv, null).getPropertyValue("height");
+
+      txtHeight.value = h_style;
+
+      var txtWidth = document.getElementById("t2");
+      var w_style = document.defaultView.getComputedStyle(RefDiv, null).getPropertyValue("width");
+
+      txtWidth.value = w_style;
+
+      var txtBackgroundColor = document.getElementById("t3");
+      var b_style = document.defaultView.getComputedStyle(RefDiv, null).getPropertyValue("background-color");
+
+      txtBackgroundColor.value = b_style;
+    }
+
+    // Displaying Event Object Properties
+
+  </script>
+</head>
+<body>
+  <p>Image 1: no height, width, or style
+  <img id="image1" src="http://www.mozilla.org/images/mozilla-banner.gif">
+</p>
+
+<p>Image 2: height="50", width="500", but no style
+  <img id="image2"
+       src="http://www.mozilla.org/images/mozilla-banner.gif"
+       height="50" width="500">
+</p>
+
+<p>Image 3: no height, width, but style="height: 50px; width: 500px;"
+  <img id="image3"
+       src="http://www.mozilla.org/images/mozilla-banner.gif"
+       style="height: 50px; width: 500px;">
+</p>
+
+<div id="output"> </div>
+<p>
+  <img id="img1"
+       src="http://www.mozilla.org/images/mozilla-banner.gif"
+       style="border: 5px solid green;"
+       width="100" height="100" alt="border test">
+</p>
+
+<form name="FormName">
+  <input type="button" value="Make border 20px-wide" onclick="setBorderWidth(20);" />
+  <input type="button" value="Make border 5px-wide"  onclick="setBorderWidth(5);" />
+</form>
+
+<p id="pid" onclick="window.location.href = 'http://www.cnn.com/';">linker</p>
+
+<form>
+  <p><input value="rec" type="button" onclick="changeText();" /></p>
+</form>
+
+<h2>Event Propogation</h2>
+<table id="t-daddy" onclick="console.log('hi, table');">
+  <tr id="tbl1">
+    <td id="c1">one</td>
+    <td id="c3">three</td>
+  </tr>
+  <tr>
+    <td id="c2">two</td>
+  </tr>
+</table>
+
+<h2>getComputedStyle</h2>
+<div id="d1">&nbsp;</div>
+
+<form action="">
+  <div>
+    <p><button type="button" onclick="cStyles();">getComputedStyle</button></p>
+    <p><label for="t1">height</label><input id="t1" type="text" value="1" /></p>
+    <p><label for="t2">max-width</label><input id="t2" type="text" value="2" /></p>
+    <p><label for="bg-color">bg-color</label><input id="t3" type="text" value="3" /></p>
+  </div>
+</form>
+
+<h2>Get Event Object Properties</h2>
+<h3>Properties of the DOM <span id="eventType"></span> Event Object</h3>
+
+</body>
+</html>
