@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blurred Navigation</title>
+  <style media="screen">
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+    }
+    ul li {
+      list-style: none;
+      position: relative;
+      padding: 5px;
+      margin-right: 5px;
+    }
+    ul li::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: #2175BC;
+      transform: skewX(-25deg);
+    }
+
+    ul li:hover::after {
+      background: #2586D7;
+    }
+  </style>
 </head>
 <body>
   <div class="rascal">
@@ -16,6 +45,6 @@
       <li>Tab 5</li>
     </ul>
   </div>
-  
+
 </body>
 </html>
